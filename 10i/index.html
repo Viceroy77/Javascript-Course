@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+   <!--9j-->
+   <p>
+    <button onclick="
+      updateCalculation('1');
+    " class="digits">1</button>
+
+    <button onclick="
+      updateCalculation('2');
+    " class="digits">2</button>
+
+    <button onclick="
+      updateCalculation('3');
+    " class="digits">3</button>
+
+    <button onclick="
+      updateCalculation(' + ');
+    " class="operations">+</button>
+  </p>
+
+  <p>
+    <button onclick="
+      updateCalculation('4');
+    " class="digits">4</button>
+
+    <button onclick="
+      updateCalculation('5');
+    " class="digits">5</button>
+
+    <button onclick="
+      updateCalculation('6');
+    " class="digits">6</button>
+
+    <button onclick="
+      updateCalculation(' - ');
+    " class="operations">-</button>
+  </p>
+
+  <p>
+    <button onclick="
+      updateCalculation('7');
+    " class="digits">7</button>
+
+    <button onclick="
+      updateCalculation('8');
+    " class="digits">8</button>
+
+    <button onclick="
+      updateCalculation('9');
+    " class="digits">9</button>
+
+    <button onclick="
+      updateCalculation(' * ');
+    " class="operations">*</button>
+  </p>
+
+  <p>
+    <button onclick="
+      updateCalculation('0');
+    " class="digits">0</button>
+
+    <button onclick="
+      updateCalculation('.');
+    " class="digits">.</button>
+
+    <button onclick="
+      // Note: eval() takes a string and runs it as code.
+      // Avoid using eval() in real world projects since
+      // it can potentially be given harmful code to run.
+      // Only use eval() for learning purposes.
+      calculation = eval(calculation);
+      console.log(calculation);
+    " class="digits">=</button>
+
+    <button onclick="
+      updateCalculation(' / ');
+    " class="operations">/</button>
+  </p>
+
+  <p>
+    <button onclick="
+      calculation = '';
+      console.log(calculation);
+    " style="width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            color: white;
+            background-color: rgb(43, 42, 42);
+            border: none;
+            margin: 5px;
+            ">Clear</button>
+  </p>
+
+  <p class="output"></p>
+</body>
+
+    <script src="script.js">
+            
+    </script>
+
+</html>

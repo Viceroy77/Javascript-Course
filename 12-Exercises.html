@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12 Exercises</title>
+    <link rel="stylesheet" href="styles/12-exercises.css">
+</head>
+<body>
+<button class="timeout" >Start</button> <br>
+<button class="timingout" >Start</button> <br>
+<button class="cart" >Add to cart</button> <br>
+<button class = "cart1">Add to cart</button>
+
+<p class="info"></p>
+<p class="js-message"></p>
+<button class="add" >Add</button> 
+<button class="remove" >Remove</button> <br>
+<button onclick="message++;
+      displayNotification();">Add</button>
+<button onclick="if (message > 0) {
+    message--;
+
+    // If there are no new messages, stop displaying
+    // the notification in the tab.
+    if (message === 0) {
+      stopNotification();
+    }
+  }">Remove</button>
+
+
+    <script src="scripts/12-exercises.js"></script>
+</body>
+</html>

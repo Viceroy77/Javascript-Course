@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--9a-->
+    <button>9a</button>
+
+    <!--9b-->
+    <button onclick="Done()" class="done">9b</button> <br>
+
+    <!--9c-->
+    <button style="margin-top:5px ;" onclick="heads()" class=" head">Heads</button>
+    <button onclick="tails()" class="tail">tails</button>
+    <p class="choice"></p>
+
+    <!--9d-->
+    <input type="text" name="" id="name" placeholder="Name" onkeydown="yourNameKeyDown(event)">
+    <button onclick="yourName()" > Submit</button>
+    <p class="name"></p>
+
+    <!--9i-->
+    <button onclick="
+        displayCartQuantity();
+        ">
+        Show Quantity
+    </button>
+
+    <button onclick="
+    updateCartQuantity( 1 )
+
+    ">Add to cart</button> 
+
+    <button onclick="
+     updateCartQuantity( 2 )">+2</button>
+
+    <button onclick="
+    updateCartQuantity( 3 )">+3</button>
+
+    <button onclick="
+    updateCartQuantity( 4 )">+4</button>
+
+    <button onclick="
+    updateCartQuantity( 5 )">+5</button>
+
+    <button onclick="
+    updateCartQuantity( -1 )">Remove from cart</button>
+
+    <button onclick="
+     updateCartQuantity( -2 )">-2</button>
+
+    <button onclick="
+    updateCartQuantity( -3 )">-3</button>
+
+    <button onclick="
+    cartQuantity = 0;
+    console.log('Card was reset');
+    //Display the cart quantity after updating. 
+    displayCartQuantity()";
+    >Reset Cart</button>
+
+    <p class="show-quantity"></p>
+
+    <!--9h-->
+    <input type="text" placeholder="Type something" onkeyup="keyUp()" class="key">
+
+    <p class = "Keys"></p>
+
+     <!--9j-->
+     <p>
+        <button onclick="
+          updateCalculation('1');
+        ">1</button>
+  
+        <button onclick="
+          updateCalculation('2');
+        ">2</button>
+  
+        <button onclick="
+          updateCalculation('3');
+        ">3</button>
+  
+        <button onclick="
+          updateCalculation(' + ');
+        ">+</button>
+      </p>
+  
+      <p>
+        <button onclick="
+          updateCalculation('4');
+        ">4</button>
+  
+        <button onclick="
+          updateCalculation('5');
+        ">5</button>
+  
+        <button onclick="
+          updateCalculation('6');
+        ">6</button>
+  
+        <button onclick="
+          updateCalculation(' - ');
+        ">-</button>
+      </p>
+  
+      <p>
+        <button onclick="
+          updateCalculation('7');
+        ">7</button>
+  
+        <button onclick="
+          updateCalculation('8');
+        ">8</button>
+  
+        <button onclick="
+          updateCalculation('9');
+        ">9</button>
+  
+        <button onclick="
+          updateCalculation(' * ');
+        ">*</button>
+      </p>
+  
+      <p>
+        <button onclick="
+          updateCalculation('0');
+        ">0</button>
+  
+        <button onclick="
+          updateCalculation('.');
+        ">.</button>
+  
+        <button onclick="
+          // Note: eval() takes a string and runs it as code.
+          // Avoid using eval() in real world projects since
+          // it can potentially be given harmful code to run.
+          // Only use eval() for learning purposes.
+          calculation = eval(calculation);
+          console.log(calculation);
+        ">=</button>
+  
+        <button onclick="
+          updateCalculation(' / ');
+        ">/</button>
+      </p>
+  
+      <p>
+        <button onclick="
+          calculation = '';
+          console.log(calculation);
+        ">Clear</button>
+      </p>
+
+      <p class="output"></p>
+</body>
+
+
+<script>
+//9i
+let cartQuantity = 0;
+        // Display the cart quantity when the page loads.
+        function displayCartQuantity()  {
+            document.querySelector('.show-quantity').innerHTML = `Cart quantity: ${cartQuantity}`;
+        }
+
+        function updateCartQuantity( value ) {
+            
+            localStorage.getItem('quantity', JSON.stringify`(${cartQuantity})`)
+
+           
+
+
+        if (cartQuantity + value > 10) {
+          alert('The cart is full');
+          return;
+
+        } else if (cartQuantity + value < 0) {
+          alert('Not enough items in the cart');
+          return;
+
+        } else {
+          
+        cartQuantity += value ;
+        displayCartQuantity()
+        }
+
+       
+
+       localStorage.setItem('quantity', JSON.stringify`(${cartQuantity})`)
+    }
+
+    //9a
+    console.log(document.querySelector('button'));
+
+    //9b
+    function Done() {
+        document.querySelector('.done').innerHTML = '9b Done'
+    }
+    
+
+    //9c
+    function heads() {
+        document.querySelector('.choice').innerHTML = 'You chose: heads'
+    }
+
+    function tails() {
+        document.querySelector('.choice').innerHTML = 'You chose: tails'
+    }
+
+    //9d
+    function yourName() {
+        const Name = document.querySelector('#name')
+        let display = Name.value
+
+        document.querySelector('.name').innerHTML = `Your name is: ${display}`;
+    }
+    //9e
+    function yourNameKeyDown(event) {
+        if (event.key === 'Enter') {
+            yourName()
+        }
+    }
+
+    //9h
+    function keyUp() {
+        const inputElement = document.querySelector('.key');
+        document.querySelector('.Keys').innerHTML = inputElement.value
+    };
+
+    //9j
+      let calculation = localStorage.getItem('calculation') || '';
+        // Display the calculation when the page first loads.
+      displayCalculation();
+
+      function updateCalculation(value) {
+        calculation += value;
+       // Display the calculation on the page
+        // instead of console.log
+        displayCalculation();
+
+        localStorage.setItem('calculation', calculation)
+      }
+    
+       function displayCalculation() {
+        document.querySelector('.output').innerHTML = calculation;
+       }
+</script>
+</html>

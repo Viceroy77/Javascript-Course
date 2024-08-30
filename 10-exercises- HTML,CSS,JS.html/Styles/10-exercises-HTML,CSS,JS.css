@@ -1,0 +1,63 @@
+/*10a*/
+.cart-button {
+ font-family:Verdana, Geneva, Tahoma, sans-serif;
+ background-color: rgb(255,216,20);
+ 
+ text-wrap: nowrap;
+ padding: 10px 25px;  
+ border-radius: 20px;
+ border: none;
+ font-weight:bold;
+ align-items: center;
+ cursor: pointer
+}
+
+/*10b*/
+.b-div{
+    margin-top: 10px;
+}
+
+.b-div-button{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    background-color: black;
+    color: white;
+ text-wrap: nowrap;
+ padding: 10px 25px;  
+ border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+ border: none;
+ font-weight:bold;
+ 
+}
+
+.b-div-button1, .toggle-button{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    background-color: rgb(230,230,230);
+    text-wrap: nowrap;
+    padding: 10px 25px;  
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: none;
+    font-weight:bold;
+    margin-bottom: 5px;
+    
+}
+
+.is-toggled, .is-toggled1  {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    background-color: black;
+    color: white;
+ text-wrap: nowrap;
+ padding: 10px 25px;  
+ border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+ border: none;
+ font-weight:bold;
+}
+
